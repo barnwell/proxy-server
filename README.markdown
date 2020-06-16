@@ -5,13 +5,5 @@ Proxies requests with the `Access-Control-Allow-Origin : *` header
 
 # Usage
 
-	GET http://proxy-server.herokuapp.com/[URL]
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-e.g.  GET http://proxy-server.herokuapp.com/http://adodson.com
-
-
-# License
-None discernible
-
-# Author
-[Andrew Dodson](http://adodson.com)

@@ -1,0 +1,7 @@
+{
+  "name": "Heroku Env Proxy",
+  "description": "Simple Heroku proxy server that forwards requests based on an env variable",
+  "repository": "https://github.com/barnwell/proxy-server",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
