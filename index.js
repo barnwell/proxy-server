@@ -34,12 +34,8 @@ function proxy(req,res){
 	// Maintain a collection of URL overriding parameters
 	var params = {};
 	
-	var resourceURL = process.env.FORWARD_URL || 'http://example.com/';
-
-	if( !resourceURL || !resourceURL.match(/^[a-z]+:\/\/[a-z\.\-]+/i) ){
-		error(res);
-		return;
-	}
+	var resourceURL = process.env.FORWARD_URL + "/" + req.url.replace(/^\/+/,'');
+	console.log("Fetching", resourceURL);
 
 	// Options
 	var proxyOptions = url.parse(resourceURL);
