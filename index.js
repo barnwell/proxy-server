@@ -33,20 +33,8 @@ function proxy(req,res){
 
 	// Maintain a collection of URL overriding parameters
 	var params = {};
-
-
-	// Is the entire path the request?
-	// i.e. http://proxy-server/http://thirdparty.com/request/to/be/proxied
-	var resourceURL = req.url.replace(/^\/+/,'');
-	if( resourceURL && !resourceURL.match(/^[a-z]+:\/\/[a-z\.\-]+/i) ){
-
-		// Otherwise update the default parameters
-		params = querystring.parse(resourceURL.replace(/.*\?/,''));
-
-		// Redefine the URL
-		resourceURL = params.url;
-		delete params.url;
-	}
+	
+	var resourceURL = process.env.FORWARD_URL || 'http://example.com/';
 
 	if( !resourceURL || !resourceURL.match(/^[a-z]+:\/\/[a-z\.\-]+/i) ){
 		error(res);
